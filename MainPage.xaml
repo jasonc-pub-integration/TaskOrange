@@ -1,0 +1,49 @@
+﻿<Page
+    x:Class="TaskOrange.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TaskOrange"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid x:Name="Greedy">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="300"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel x:Name="stckPnl" Orientation="Vertical" Margin="0,20,0,0"
+                        HorizontalAlignment="Center" VerticalAlignment="Top"
+                        Grid.Column="0">
+                    <TextBox x:Name="plcTextbox" Header="PLACEMENT:" Text="1070436" TextAlignment="Center"
+                         Margin="0,20,0,0" Height="60" Width="240" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Button x:Name="loadBannerBtn" Content="Load and Show Banner" Click="LoadAndShowBanner" 
+                        Margin="0,20,0,0" Height="40" Width="240" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Button x:Name="removeBannerBtn" Content="Remove Banner" Click="RemoveBanner" 
+                        Margin="0,20,0,0" Height="40" Width="240" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Button x:Name="loadInterstitialBtn" Content="Load and Show Interstitial" Click="LoadAndShowInterstitial" 
+                        Margin="0,20,0,0" Height="40" Width="240" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                </StackPanel>
+            </Grid>
+            <RelativePanel x:Name="adPanel" Grid.Row="1" Width="1000" Margin="250,0,250,150" Background="#FFF27E7E">
+                <ProgressRing x:Name="LoadingIndicator" HorizontalAlignment="Left"
+                          Margin="0,20,0,0" Width="60" Height="60" Visibility="Collapsed" 
+                          RelativePanel.AlignTopWithPanel="True"/>
+                <StackPanel x:Name="adSpacePanel" Margin="0,20,0,0" HorizontalAlignment="Center"
+                        RelativePanel.Below="LoadingIndicator" RelativePanel.AlignBottomWithPanel="True"
+                        RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" Background="#777"/>
+            </RelativePanel>
+
+        </Grid>
+
+    </Grid>
+</Page>
